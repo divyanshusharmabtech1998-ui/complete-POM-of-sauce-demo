@@ -1,0 +1,36 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git branch: 'main',
+                url: 'https://github.com/divyanshusharmabtech1998-ui/complete-POM-of-sauce-demo.git'
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                bat 'npm install'
+            }
+        }
+
+        stage('Install Playwright Browsers') {
+            steps {
+                bat 'npx playwright install'
+            }
+        }
+
+        stage('Run Playwright Tests') {
+            steps {
+                bat 'npx playwright test'
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'playwright-report/**, test-results/**', allowEmptyArchive: true
+        }
+    }
+}
