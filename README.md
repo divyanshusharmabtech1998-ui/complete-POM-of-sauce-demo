@@ -1,133 +1,170 @@
-🚀 Playwright POM SauceDemo Automation Framework
+# 🚀 Playwright POM SauceDemo Automation Framework
 
-A simple Playwright Automation Framework using Page Object Model (POM) for the SauceDemo website.
+A simple **Playwright Automation Framework** using **Page Object Model (POM)** for the SauceDemo website.
 
-📌 Project Overview
+## 📌 Project Overview
 
 This project automates the following flow on the SauceDemo website:
 
-Login functionality
-Add product to cart
-Go to cart
-Checkout process
-Finish order
+- Login functionality
+- Add product to cart
+- Go to cart
+- Checkout process
+- Finish order
 
-Website Used:
-SauceDemo
+### Website Used:
+https://www.saucedemo.com/
 
-🛠️ Tech Stack
-JavaScript
-Playwright
-Node.js
-Page Object Model (POM)
-📂 Project Structure
+---
+
+## 🛠️ Tech Stack
+
+- JavaScript
+- Playwright
+- Node.js
+- Page Object Model (POM)
+- Git & GitHub
+
+---
+
+## 📂 Project Structure
+
+```bash
 testd/
-│
-├── pages/
+│── pages/
 │   ├── loginpage.js
 │   ├── productpage.js
 │   ├── checkoutpage.js
-│   └── finalpage.js
+│   ├── finalpage.js
 │
-├── tests/
-│   └── saucetest.spec.js
+│── tests/
+│   ├── saucetest.spec.js
 │
-├── utils/
+│── utils/
 │   ├── credentials.js
-│   └── testdata.js
+│   ├── testdata.js
 │
-├── .env
-├── package.json
-├── playwright.config.js
-└── README.md
-⚙️ Installation
-1️⃣ Clone Repository
-git clone <your-github-repo-link>
-2️⃣ Open Project
-cd testd
-3️⃣ Install Dependencies
-npm install
-4️⃣ Install Playwright Browsers
-npx playwright install
-▶️ Run Tests
-Run All Tests
-npx playwright test
-Run Specific Test
-npx playwright test tests/saucetest.spec.js --headed
-🧩 Framework Features
+│── .env
+│── .gitignore
+│── playwright.config.js
+│── package.json
+│── README.md
+```
 
-✅ Page Object Model Design Pattern
-✅ Reusable Page Classes
-✅ Separate Test Data Files
-✅ Environment Variable Support
-✅ Clean Folder Structure
-✅ Easy Maintenance
+---
 
-📄 Pages Included
-🔐 Login Page
+## ✅ Framework Features
 
-Handles:
+- Page Object Model Design Pattern
+- Reusable Page Classes
+- Separate Test Data Files
+- Environment Variable Support
+- Clean Folder Structure
+- Easy Maintenance
 
-Username
-Password
-Login button
-🛒 Product Page
+---
 
-Handles:
+## 📄 Pages Included
 
-Add to cart
-Go to cart
-💳 Checkout Page
+### 🔐 Login Page
+- Navigate to SauceDemo website
+- Enter username
+- Enter password
+- Click login button
 
-Handles:
+### 🛒 Product Page
+- Add product to cart
+- Navigate to cart
 
-Checkout process
-User information
-✅ Final Page
+### 📦 Checkout Page
+- Enter First Name
+- Enter Last Name
+- Enter Zip Code
+- Continue checkout
 
-Handles:
+### 🎯 Final Page
+- Finish Order
+- Validate successful order placement
 
-Finish order validation
-📦 Test Flow
-Open SauceDemo
-↓
-Login with valid credentials
-↓
-Validate Inventory Page
-↓
-Add Product to Cart
-↓
-Go to Cart
-↓
-Checkout Product
-↓
-Complete Order
-🔑 Credentials Example
+---
+
+## 📁 Test Data Management
+
+### credentials.js
+
+```javascript
 module.exports = {
     username: "standard_user",
     password: "secret_sauce"
 }
-📊 Assertions Used
-await expect(page).toHaveURL(/inventory/)
+```
 
-Used to validate successful login.
+### testdata.js
 
-🧪 Example Test Command
+```javascript
+module.exports = {
+    firstname: "Divyanshu",
+    lastname: "Sharma",
+    zipcode: "560037"
+}
+```
+
+---
+
+## ⚙️ Installation
+
+### 1. Clone Repository
+
+```bash
+git clone <your-github-repository-url>
+```
+
+### 2. Open Project
+
+```bash
+cd testd
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Install Playwright Browsers
+
+```bash
+npx playwright install
+```
+
+---
+
+## ▶️ Run Tests
+
+### Run All Tests
+
+```bash
+npx playwright test
+```
+
+### Run Specific Test
+
+```bash
 npx playwright test tests/saucetest.spec.js --headed
-📸 HTML Report
+```
 
-To open Playwright report:
+---
 
+## 📊 Generate Report
+
+```bash
 npx playwright show-report
-👨‍💻 Author
+```
 
-Divyanshu Sharma
-QA Automation Engineer
+---
 
-⭐ Future Enhancements
-Jenkins CI/CD Integration
-Docker Support
-API Testing Integration
-Allure Reporting
-Cross Browser Testing
-I prefer this response
+## 👨‍💻 Author
+
+**Divyanshu Sharma**  
+QA Automation Engineer  
+Playwright | API Testing | Automation Testing
